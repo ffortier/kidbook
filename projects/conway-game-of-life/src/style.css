@@ -1,0 +1,25 @@
+.grid {
+  list-style: none;
+  padding: 0;
+  width: 21em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid label:nth-child(2n) {
+  background-color: lightgray;
+}
+
+.grid input {
+  display: none;
+}
+
+.grid input:checked+i {
+  background: blue;
+}
+
+.grid i {
+  display: block;
+  width: 1em;
+  height: 1em;
+}

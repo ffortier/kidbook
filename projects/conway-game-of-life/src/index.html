@@ -1,0 +1,6 @@
+<div class="grid" data-bind="foreach: cells">
+<label data-bind="click: $parent.toggle.bind(null, $data, $index())"><input type="checkbox" data-bind="checked: $data"/><i></i></label>
+</div>
+<button type="button" data-bind="disable: started, click: start">Start</button>
+<button type="button" data-bind="enable: started, click: stop">Stop</button>
+<input type="range" min="1" max="10" step="1" data-bind="value: speed"/>
