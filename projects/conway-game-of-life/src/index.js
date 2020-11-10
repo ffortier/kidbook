@@ -1,3 +1,7 @@
+require('./style.css');
+
+const ko = require('knockout');
+
 const rows = 20;
 const cols = 21;
 
@@ -5,8 +9,8 @@ const isInRange = (value, min, max) => value >= min && value < max;
 
 const deadOrAlive = (row, col, arr) =>
   isInRange(row, 0, rows) &&
-  isInRange(col, 0, cols) &&
-  arr[row * cols + col] ? 1 : 0;
+    isInRange(col, 0, cols) &&
+    arr[row * cols + col] ? 1 : 0;
 
 const countLivingNeighboursByPosition = (row, col, arr) =>
   deadOrAlive(row - 1, col - 1, arr) +
