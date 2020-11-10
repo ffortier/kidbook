@@ -52,8 +52,12 @@ function GameOfLife() {
     this.cells.splice(index, 1, !data);
   };
 
+  const updateValue = (value, index) => {
+    this.cells()[index] === value || this.cells.splice(index, 1, value);
+  }
+
   const animate = () => {
-    this.cells.splice(0, this.cells().length, ...nextGeneration(this.cells.slice()));
+    nextGeneration(this.cells.slice()).forEach(updateValue);
   };
 
   const changeSpeed = newSpeed => {
